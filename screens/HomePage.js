@@ -5,11 +5,13 @@ import {
   Text,
   View,
 } from 'react-native';
+import Icon from 'react-native-vector-icons/AntDesign';
 
 const HomePage = () => {
   return (
     <View style={styles.container}>
-      <Text>Welcome to react native</Text>
+      <Icon name="delete" size={36} color="red"/>
+      <Text style={styles.text}>Welcome to react native</Text>
     </View>
   );
 };
@@ -20,6 +22,11 @@ const styles = StyleSheet.create({
     height: "100%",
     width: "100%",
     backgroundColor: "white",
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  text: {
+    color: "black",
   }
 });
 
