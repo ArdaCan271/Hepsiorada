@@ -5,13 +5,12 @@ import {
   Text,
   View,
 } from 'react-native';
-import Icon from 'react-native-vector-icons/AntDesign';
+import Icon from 'react-native-vector-icons/Ionicons';
 
-const HomePage = () => {
+const Favorilerim = () => {
   return (
     <View style={styles.container}>
-      <Icon name="delete" size={36} color="red"/>
-      <Text style={styles.text}>Welcome to react native</Text>
+      <Text style={styles.text}>Favorilerim</Text>
     </View>
   );
 };
@@ -30,4 +29,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default HomePage;
+export default Favorilerim;
