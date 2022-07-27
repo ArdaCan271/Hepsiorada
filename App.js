@@ -4,6 +4,7 @@ import {
   StyleSheet,
   TouchableNativeFeedback,
   TouchableOpacity,
+  Pressable,
 } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
@@ -22,7 +23,6 @@ const App = () => {
       <Tab.Navigator
 
         screenOptions={({route}) => ({
-          tabBarButtonComponent: TouchableNativeFeedback,
           tabBarIcon: ({focused, color, size}) => {
             let iconName;
 
@@ -36,10 +36,13 @@ const App = () => {
               iconName = focused ? "grid" : "grid-outline"
             }
 
-            return <Icon name={iconName} size={size} color={color}/>
+            return <Icon name={iconName} size={28} color={color}/>
           },
           tabBarActiveTintColor: "#00c9d4",
           tabBarInactiveTintColor: "gray",
+          tabBarLabelStyle: {marginTop: -5, marginBottom: 4},
+          tabBarStyle: {height: 53},
+          tabBarButton: (props) => <Pressable android_disableSound android_ripple={{color: "#c9eaf5"}} {...props}/>
         })}>
         <Tab.Screen name="Anasayfa" component={Anasayfa} options={{header: () => (<View/>)}}/>
         <Tab.Screen name='Kategoriler' component={Kategoriler} options={{header: () => (<View/>)}}/>

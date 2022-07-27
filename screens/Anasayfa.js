@@ -14,13 +14,7 @@ import DefaultHeader from '../components/DefaultHeader';
 
 const Anasayfa = ({navigation}) => {
 
-  useEffect(() => {
-    navigation.setOptions({
-      header: () => (
-        <DefaultHeader/>
-      ),
-    });
-  }, []);
+  useEffect(() => {navigation.setOptions({header: () => (<DefaultHeader/>),});}, []);
 
   return (
     <View style={styles.container}>

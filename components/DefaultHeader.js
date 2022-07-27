@@ -3,6 +3,7 @@ import {
   Text,
   View,
   Pressable,
+  TouchableOpacity,
 } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 
@@ -23,12 +24,12 @@ const DefaultHeader = () => {
         fontWeight: "bold",
       }}>hepsiorada</Text>
       <View style={{flexDirection: "row"}}>
-        <Pressable android_disableSound >
-          <Icon name='notifications-outline' size={25} color={"black"} style={{marginRight: 15}}/>
-        </Pressable>
-        <Pressable android_disableSound >
+        <TouchableOpacity>
+          <Icon name='notifications-outline' size={25} color={"black"} style={{marginRight: 18}}/>
+        </TouchableOpacity>
+        <TouchableOpacity>
           <Icon name='person-outline' size={25} color={"black"} style={{marginRight: 15}}/>
-        </Pressable>
+        </TouchableOpacity>
       </View>
     </View>
   )
