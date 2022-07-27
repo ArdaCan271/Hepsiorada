@@ -4,10 +4,23 @@ import {
   StyleSheet,
   Text,
   View,
+  Pressable
 } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
+import { useEffect } from 'react';
 
-const Favorilerim = () => {
+import DefaultHeader from '../components/DefaultHeader';
+
+const Favorilerim = ({navigation}) => {
+
+  useEffect(() => {
+    navigation.setOptions({
+      header: () => (
+        <DefaultHeader/>
+      ),
+    });
+  }, []);
+
   return (
     <View style={styles.container}>
       <Text style={styles.text}>Favorilerim</Text>

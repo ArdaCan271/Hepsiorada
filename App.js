@@ -2,6 +2,8 @@ import React from 'react';
 import {
   View,
   StyleSheet,
+  TouchableNativeFeedback,
+  TouchableOpacity,
 } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
@@ -18,7 +20,9 @@ const App = () => {
   return (
     <NavigationContainer>
       <Tab.Navigator
+
         screenOptions={({route}) => ({
+          tabBarButtonComponent: TouchableNativeFeedback,
           tabBarIcon: ({focused, color, size}) => {
             let iconName;
 
@@ -38,9 +42,9 @@ const App = () => {
           tabBarInactiveTintColor: "gray",
         })}>
         <Tab.Screen name="Anasayfa" component={Anasayfa} options={{header: () => (<View/>)}}/>
-        <Tab.Screen name='Kategoriler' component={Kategoriler}/>
-        <Tab.Screen name="Sepetim" component={Sepetim} />
-        <Tab.Screen name='Favorilerim' component={Favorilerim}/>
+        <Tab.Screen name='Kategoriler' component={Kategoriler} options={{header: () => (<View/>)}}/>
+        <Tab.Screen name="Sepetim" component={Sepetim} options={{header: () => (<View/>)}}/>
+        <Tab.Screen name='Favorilerim' component={Favorilerim} options={{header: () => (<View/>)}}/>
       </Tab.Navigator>
     </NavigationContainer>  
   );
