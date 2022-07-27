@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  StatusBar,
+  ScrollView,
   StyleSheet,
   Text,
   View,
@@ -17,9 +17,16 @@ const Anasayfa = ({navigation}) => {
   useEffect(() => {navigation.setOptions({header: () => (<DefaultHeader/>),});}, []);
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.text}>Anasayfa</Text>
-    </View>
+    <ScrollView contentContainerStyle={{justifyContent: "flex-start", alignItems: "center"}} style={styles.container}>
+      <View style={{width: "100%", height: 55, flexDirection: "row", paddingHorizontal: 20}}>
+        <View style={styles.location}>
+
+        </View>
+        <View style={styles.location}>
+
+        </View>
+      </View>
+    </ScrollView>
   );
 };
 
@@ -29,8 +36,13 @@ const styles = StyleSheet.create({
     height: "100%",
     width: "100%",
     backgroundColor: "white",
-    justifyContent: "center",
-    alignItems: "center",
+  },
+  location: {
+    width: "60%",
+    height: "90%",
+    backgroundColor: "#e8e8e8",
+    borderRadius: 12,
+    marginTop: 5,
   },
   text: {
     color: "black",
