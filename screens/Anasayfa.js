@@ -2,11 +2,6 @@ import React from 'react';
 import {
   ScrollView,
   StyleSheet,
-  Text,
-  View,
-  Image,
-  Pressable,
-  TextInput,
 } from 'react-native';
 import Ionicon from 'react-native-vector-icons/Ionicons';
 import MaterialCommunityIcon from 'react-native-vector-icons/MaterialCommunityIcons';
@@ -24,7 +19,11 @@ import SuggestionsPlace from '../components/Anasayfa/SuggestionsPlace';
 
 const Anasayfa = ({navigation}) => {
 
-  useEffect(() => {navigation.setOptions({header: () => (<DefaultHeader/>),});}, []);
+  const onAccountPress = () => {
+    navigation.navigate("Kullanıcı")
+  }
+
+  useEffect(() => {navigation.setOptions({header: () => (<DefaultHeader onAccountPress={}/>),});}, []);
 
   const advert1 = require("../assets/adverts/advert1.jpg");
   const advert2 = require("../assets/adverts/advert2.jpg");
@@ -87,7 +86,7 @@ const Anasayfa = ({navigation}) => {
         <HomeScrollerProduct
         image={table1}
         price="163,90"
-        discountPrice="7.350,00"
+        discountPrice="218,60"
         title='Box&Box Küçük Boy Katlanabilir Kumaş Kamp ve Piknik Masası, Siyah, 57 x 43 x 38 cm'/>
         <HomeScrollerProduct
         image={lamp1}

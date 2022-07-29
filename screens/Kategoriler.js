@@ -22,7 +22,7 @@ const Kategoriler = ({navigation}) => {
       style={styles.scrollContainer}
       showsVerticalScrollIndicator={false}>
         <View style={{width: "100%", height: 50, justifyContent: "center", alignItems: "flex-start",}}>
-          <Text style={{color: "#121212", marginLeft: 15, fontWeight: "600"}}>Popüler Kategoriler</Text>
+          <Text style={{color: "#3a3a3a", marginLeft: 15, fontWeight: "600"}}>Popüler Kategoriler</Text>
         </View>
         <View style={styles.categoriesContainer}>
           <Kategori icon="human-female" title="Kadın Giyim"/>

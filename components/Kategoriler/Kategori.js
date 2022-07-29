@@ -3,6 +3,7 @@ import {
   StyleSheet,
   View,
   Text,
+  Pressable,
 } from 'react-native';
 import MaterialCommunityIcon from 'react-native-vector-icons/MaterialCommunityIcons';
 
@@ -10,9 +11,9 @@ const Kategori = (props) => {
 
   return (
     <View style={styles.categoryView}>
-      <View style={styles.categoryIconView}>
+      <Pressable unstable_pressDelay={80} android_ripple={{color: "lightgray", radius: 77.8}} style={styles.categoryIconView}>
         <MaterialCommunityIcon name={props.icon} size={90} color={"#4b7a79"}/>
-      </View>
+      </Pressable>
       <Text
       numberOfLines={2}
       style={styles.categoryText}
@@ -42,7 +43,7 @@ const styles = StyleSheet.create({
     alignItems: "center"
   },
   categoryText: {
-    color: "#121212", 
+    color: "#3a3a3a", 
     fontSize: 13, 
     fontWeight: "500", 
     marginLeft: 5, 

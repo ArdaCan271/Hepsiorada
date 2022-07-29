@@ -23,7 +23,7 @@ const HomeScrollerProduct = (props) => {
       </View>
       <Text numberOfLines={2} style={styles.productTitle}>{props.title}</Text>
       <Pressable style={styles.addProductButton}>
-        <Text style={{color: "#121212", fontSize: 12, fontWeight: "500"}}>SEPETE EKLE</Text>
+        <Text style={{color: "#3a3a3a", fontSize: 12, fontWeight: "500"}}>SEPETE EKLE</Text>
       </Pressable>
     </View>
   );
@@ -52,7 +52,7 @@ const styles = StyleSheet.create({
     height: "100%",
   },
   productPrice: {
-    color: "#121212",
+    color: "#3a3a3a",
     fontWeight: "800",
     marginHorizontal: 8,
     fontSize: 18,
@@ -65,7 +65,7 @@ const styles = StyleSheet.create({
     fontSize: 15,
   },
   productTitle: {
-    color: "#121212",
+    color: "#3a3a3a",
     marginHorizontal: 8,
     fontSize: 11,
     marginBottom: 4

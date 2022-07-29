@@ -38,11 +38,11 @@ const DefaultHeader = () => {
               borderRadius:10,
               fontWeight: "700"
             }}> 3 </Text>
-            <Icon name='notifications-outline' size={25} color={"black"} style={{}}/>
+            <Icon name='notifications-outline' size={25} color={"#3a3a3a"} style={{}}/>
           </View>
         </Pressable>
         <Pressable>
-          <Icon name='person-outline' size={25} color={"black"} style={{marginRight: 15}}/>
+          <Icon name='person-outline' size={25} color={"#3a3a3a"} style={{marginRight: 15}}/>
         </Pressable>
       </View>
     </View>

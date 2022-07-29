@@ -46,7 +46,7 @@ const styles = StyleSheet.create({
   },
   kampanya: {
     width: "46%",
-    height: 45,
+    height: 53,
     marginHorizontal: 6,
     flexDirection: "row",
     justifyContent: "flex-start",

@@ -8,7 +8,7 @@ const SuggestionsPlace = (props) => {
 
   return (
     <View style={styles.suggestionsView}>
-      {props.child}
+      {props.children}
     </View>
   );
 };

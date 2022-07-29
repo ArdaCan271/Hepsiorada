@@ -53,13 +53,15 @@ const styles = StyleSheet.create({
 
   },
   productsTextTitle: {
-    color: "#121212",
+    color: "#3a3a3a",
     fontSize: 16,
     fontWeight: "800",
+    marginLeft: 6
   },
   productsTextSubtitle: {
-    color: "#121212",
-    fontSize: 11
+    color: "#3a3a3a",
+    fontSize: 11,
+    marginLeft: 6
   },
   productsItemScroller: {
     width: "100%",

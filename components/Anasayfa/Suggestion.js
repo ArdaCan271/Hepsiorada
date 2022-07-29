@@ -6,16 +6,15 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
-import Ionicon from 'react-native-vector-icons/Ionicons';
 import MaterialCommunityIcon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 
 const Suggestion = (props) => {
   return (
     <View style={styles.suggestionContainer}>
-      <TouchableOpacity android_disableSound onPress={() => {}} android_ripple={{color: "white"}} style={styles.suggestion}>
+      <Pressable unstable_pressDelay={80} android_ripple={{color: "white"}} style={styles.suggestion}>
         <MaterialCommunityIcon name={props.icon} size={55} color={"white"}/>
-      </TouchableOpacity>
+      </Pressable>
       <Text numberOfLines={2} style={styles.suggestionText}>{props.title}</Text>
     </View>
   );
@@ -38,7 +37,7 @@ const styles = StyleSheet.create({
     alignItems: "center"
   },
   suggestionText: {
-    color: "#121212",
+    color: "#3a3a3a",
     fontSize: 12,
     textAlign: "center",
     fontWeight: "800"
