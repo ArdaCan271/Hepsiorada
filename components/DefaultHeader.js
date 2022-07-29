@@ -24,12 +24,26 @@ const DefaultHeader = () => {
         fontWeight: "bold",
       }}>hepsiorada</Text>
       <View style={{flexDirection: "row"}}>
-        <TouchableOpacity>
-          <Icon name='notifications-outline' size={25} color={"black"} style={{marginRight: 18}}/>
-        </TouchableOpacity>
-        <TouchableOpacity>
+        <Pressable>
+          <View style={{marginRight: 18}}>
+            <Text style={{
+              color: "white",
+              position: "absolute",
+              zIndex:2,
+              top:-3,
+              fontSize: 9,
+              right:-3,
+              padding:1.9,
+              backgroundColor:'#00c9d4',
+              borderRadius:10,
+              fontWeight: "700"
+            }}> 3 </Text>
+            <Icon name='notifications-outline' size={25} color={"black"} style={{}}/>
+          </View>
+        </Pressable>
+        <Pressable>
           <Icon name='person-outline' size={25} color={"black"} style={{marginRight: 15}}/>
-        </TouchableOpacity>
+        </Pressable>
       </View>
     </View>
   )
