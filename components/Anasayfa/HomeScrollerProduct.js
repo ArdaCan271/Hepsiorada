@@ -5,6 +5,7 @@ import {
   View,
   Image,
   Pressable,
+  TouchableOpacity,
 } from 'react-native';
 
 const HomeScrollerProduct = (props) => {
@@ -22,9 +23,9 @@ const HomeScrollerProduct = (props) => {
         <Text numberOfLines={1} style={{color: "red", fontSize: 14, fontWeight: "500"}}></Text>
       </View>
       <Text numberOfLines={2} style={styles.productTitle}>{props.title}</Text>
-      <Pressable style={styles.addProductButton}>
+      <TouchableOpacity delayPressIn={80} style={styles.addProductButton}>
         <Text style={{color: "#3a3a3a", fontSize: 12, fontWeight: "500"}}>SEPETE EKLE</Text>
-      </Pressable>
+      </TouchableOpacity>
     </View>
   );
 };

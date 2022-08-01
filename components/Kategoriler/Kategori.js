@@ -12,7 +12,7 @@ const Kategori = (props) => {
   return (
     <View style={styles.categoryView}>
       <Pressable unstable_pressDelay={80} android_ripple={{color: "lightgray", radius: 77.8}} style={styles.categoryIconView}>
-        <MaterialCommunityIcon name={props.icon} size={90} color={"#4b7a79"}/>
+        <MaterialCommunityIcon name={props.icon} size={90} color={"#b8dae6"}/>
       </Pressable>
       <Text
       numberOfLines={2}

@@ -10,9 +10,8 @@ import {
 import MaterialCommunityIcon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 import UserHeader from '../components/UserHeader/UserHeader';
-import UserInput from '../components/UserHeader/UserInput';
 
-const Kullanici = ({navigation}) => {
+const KullaniciSon = ({navigation, route}) => {
 
   useEffect(() => {
     navigation.setOptions({
@@ -24,27 +23,29 @@ const Kullanici = ({navigation}) => {
   const [inputBorderColor, setInputBorderColor] = useState('#darkgray');
 
   const handleNextPress = () => {
-    navigation.navigate("Kullanıcı2", {email: inputText});
-    setInputText("");
+    navigation.pop(4);
   }
 
   return (
     <View style={styles.container}>
-      <View style={{height: "38%", width: "100%", justifyContent: "flex-end", alignItems :"center"}}>
+      <View style={{height: "25%", width: "100%", justifyContent: "flex-end", alignItems :"center"}}>
         <View style={styles.userImageView}>
           <MaterialCommunityIcon name='account' size={120} color={"#3a3a3a"}/>
         </View>
       </View>
-      <UserInput
-      inputBorderColor={inputBorderColor}
-      onPressIn={() => {setInputBorderColor('#00c9d4')}}
-      onEndEditing={() => {setInputBorderColor('darkgray')}}
-      placeholder="E-postanı gir"
-      value={inputText}
-      onChangeText={setInputText}
-      placeholderTextColor={"lightgray"}/>
+      <Text numberOfLines={2} style={styles.nameText}>{route.params.isim}</Text>
+      <View style={styles.accountInfoView}>
+        <View style={{justifyContent: "flex-start", alignItems: "center", flex: 1, paddingTop: 12}}>
+          <Text style={{fontSize: 16, color: "#3a3a3a"}}>E-posta:</Text>
+          <Text numberOfLines={2} style={{fontSize: 18, color: "#3a3a3a"}}>{route.params.email}</Text>
+        </View>
+        <View style={{justifyContent: "flex-start", alignItems: "center", flex: 1, paddingTop: 12}}>
+          <Text style={{fontSize: 16, color: "#3a3a3a"}}>Şifre:</Text>
+          <Text numberOfLines={2} style={{fontSize: 18, color: "#3a3a3a"}}>{route.params.sifre}</Text>
+        </View>
+      </View>
       <Pressable onPress={handleNextPress} style={styles.nextButton}>
-        <Text style={styles.nextButtonText}>Sonraki</Text>
+        <Text style={styles.nextButtonText}>Hesap Oluştur</Text>
       </Pressable>
     </View>
   );
@@ -70,30 +71,19 @@ const styles = StyleSheet.create({
     backgroundColor: "#f5f5f5",
     elevation: 9
   },
-  textInputView: {
-    width: "80%",
-    height: 80,
-    justifyContent: "space-evenly",
-    alignItems: "center",
-    marginTop: 25,
-  },
-  inputInfo: {
+  nameText: {
+    fontSize: 24,
+    fontWeight: "600",
+    textAlign: "center",
     color: "#3a3a3a",
-    alignSelf: "flex-start",
-    marginLeft: 8,
-    fontSize: 16,
-    fontWeight: "500"
+    width: "50%"
   },
-  textInput: {
-    width: "98%",
-    height: "55%",
-    backgroundColor: "white",
-    borderWidth: 1.2,
-    borderColor: "darkgray",
-    borderRadius: 9,
-    color: "black",
-    paddingHorizontal: 10,
-    fontSize: 18,
+  accountInfoView: {
+    width: "80%",
+    height: "23%",
+    marginTop: 15,
+    borderRadius: 15,
+    backgroundColor: "#f0f0f0"
   },
   nextButton: {
     width: "79%",
@@ -109,7 +99,7 @@ const styles = StyleSheet.create({
     color: "white",
     fontSize: 20,
     fontWeight: "700",
-  }
+  },
 });
 
-export default Kullanici;
+export default KullaniciSon;

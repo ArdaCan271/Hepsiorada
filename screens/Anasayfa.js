@@ -23,7 +23,12 @@ const Anasayfa = ({navigation}) => {
     navigation.navigate("Kullanıcı")
   }
 
-  useEffect(() => {navigation.setOptions({header: () => (<DefaultHeader onAccountPress={}/>),});}, []);
+  useEffect(() => {
+    navigation.setOptions({
+      header: () => (<DefaultHeader 
+        onAccountPress={() => navigation.navigate("Kullanıcı")}/>),
+    });
+  }, []);
 
   const advert1 = require("../assets/adverts/advert1.jpg");
   const advert2 = require("../assets/adverts/advert2.jpg");
@@ -40,6 +45,13 @@ const Anasayfa = ({navigation}) => {
   const lamp1 = require("../assets/productImages/lamp1.jpg");
   const headphones1 = require("../assets/productImages/headphones1.jpg");
   const table1 = require("../assets/productImages/table1.jpg");
+  const chair2 = require("../assets/productImages/chair2.jpg");
+  const krem1 = require("../assets/productImages/krem1.jpg");
+  const krem2 = require("../assets/productImages/krem2.jpg");
+  const shoes1 = require("../assets/productImages/shoes1.jpg");
+  const kolluk1 = require("../assets/productImages/kolluk1.jpg");
+  const elbise1 = require("../assets/productImages/elbise1.jpg");
+  const glasses1 = require("../assets/productImages/glasses1.jpg");
 
   return (
     <ScrollView 
@@ -64,11 +76,6 @@ const Anasayfa = ({navigation}) => {
       title="Süper Fiyat, Süper Teklif"
       showAllButton={true}>
         <HomeScrollerProduct
-        image={phone2}
-        price="9.324,01"
-        discountPrice=""
-        title='Samsung Galaxy M30s 64 GB (Samsung Türkiye Garantili)'/>
-        <HomeScrollerProduct
         image={laptop1}
         price="19.500,00"
         discountPrice=""
@@ -79,6 +86,10 @@ const Anasayfa = ({navigation}) => {
         discountPrice="7.350,00"
         title='Samsung Galaxy M23 5G 128 GB (Samsung Türkiye Garantili)'/>
         <HomeScrollerProduct
+        image={headphones1}
+        price="721,01"
+        title="JBL Tune 510BT Multi Connect Mikrofonlu Kulaküstü Kablosuz Kulaklık Mavi"/>
+        <HomeScrollerProduct
         image={airfryer1}
         price="1.499,00"
         discountPrice=""
@@ -88,6 +99,11 @@ const Anasayfa = ({navigation}) => {
         price="163,90"
         discountPrice="218,60"
         title='Box&Box Küçük Boy Katlanabilir Kumaş Kamp ve Piknik Masası, Siyah, 57 x 43 x 38 cm'/>
+        {/* <HomeScrollerProduct
+        image={phone2}
+        price="9.324,01"
+        discountPrice=""
+        title='Samsung Galaxy M30s 64 GB (Samsung Türkiye Garantili)'/>
         <HomeScrollerProduct
         image={lamp1}
         price="199,90"
@@ -102,11 +118,45 @@ const Anasayfa = ({navigation}) => {
         image={phone4}
         price="5.599,01"
         discountPrice=""
-        title='Xiaomi Redmi Note 10S 128 GB 6 GB Ram (Xiaomi Türkiye Garantili)'/>
+        title='Xiaomi Redmi Note 10S 128 GB 6 GB Ram (Xiaomi Türkiye Garantili)'/> */}
       </HomeScroller>
       <Advert image={advert2}/>
-      <Advert image={advert3}/>
       <Advert image={advert4}/>
+      <HomeScroller
+      title="Tatile çıkacaklara öneriler"
+      subtitle="Sezonun favori ürünlerini senin için listeledik">
+        <HomeScrollerProduct
+        image={krem2}
+        price="124,90"
+        discountPrice="140,00"
+        title="Nivea Sun Koruma&Bronzluk Bronzluk Arttırıcı & Koruyucu Güneş Yağı Gkf 20 200 Ml"/>
+        <HomeScrollerProduct
+        image={elbise1}
+        price="49,90"
+        title="Mite Love Pareo Plaj Elbisesi Ponponlu"/>
+        <HomeScrollerProduct
+        image={glasses1}
+        price="49,90"
+        title="Modalucci Yeni Sezon Unisex Güneş Gözlüğü"/>
+        <HomeScrollerProduct
+        image={kolluk1}
+        price="289,00"
+        title="Bamm Bamm Başlangıç Seviye Yüzme Kolluk Çocuk Kolluk Yüzme Yardımcısı Kolluk Şişme Deniz Havuz Kolluk Simit (S) 1-5 Yaş"/>
+        {/* <HomeScrollerProduct
+        image={chair2}
+        price="436,81"
+        title="2 Adet Katlanır Kamp Sandalyesi Piknik Koltuğu Plaj Şezlongu Oval Bardaklıklı"/>
+        <HomeScrollerProduct
+        image={krem1}
+        price="117,22"
+        discountPrice="121,50"
+        title="Daylong Kids Spf 50 Faktör 150 Ml Çocuk Güneş Kremi"/> */}
+        <HomeScrollerProduct
+        image={shoes1}
+        price="109,00"
+        title="Daxtors D079 Günlük Kadın Terlik"/>
+      </HomeScroller>
+      <Advert image={advert3}/>
     </ScrollView>
   );
 };

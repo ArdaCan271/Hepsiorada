@@ -12,7 +12,7 @@ import MaterialCommunityIcon from 'react-native-vector-icons/MaterialCommunityIc
 import UserHeader from '../components/UserHeader/UserHeader';
 import UserInput from '../components/UserHeader/UserInput';
 
-const Kullanici = ({navigation}) => {
+const Kullanici3 = ({navigation, route}) => {
 
   useEffect(() => {
     navigation.setOptions({
@@ -24,7 +24,7 @@ const Kullanici = ({navigation}) => {
   const [inputBorderColor, setInputBorderColor] = useState('#darkgray');
 
   const handleNextPress = () => {
-    navigation.navigate("Kullanıcı2", {email: inputText});
+    navigation.navigate("KullanıcıSon", {email: route.params.email, sifre: route.params.sifre, isim: inputText});
     setInputText("");
   }
 
@@ -39,7 +39,7 @@ const Kullanici = ({navigation}) => {
       inputBorderColor={inputBorderColor}
       onPressIn={() => {setInputBorderColor('#00c9d4')}}
       onEndEditing={() => {setInputBorderColor('darkgray')}}
-      placeholder="E-postanı gir"
+      placeholder="Kullanıcı adını gir"
       value={inputText}
       onChangeText={setInputText}
       placeholderTextColor={"lightgray"}/>
@@ -70,31 +70,6 @@ const styles = StyleSheet.create({
     backgroundColor: "#f5f5f5",
     elevation: 9
   },
-  textInputView: {
-    width: "80%",
-    height: 80,
-    justifyContent: "space-evenly",
-    alignItems: "center",
-    marginTop: 25,
-  },
-  inputInfo: {
-    color: "#3a3a3a",
-    alignSelf: "flex-start",
-    marginLeft: 8,
-    fontSize: 16,
-    fontWeight: "500"
-  },
-  textInput: {
-    width: "98%",
-    height: "55%",
-    backgroundColor: "white",
-    borderWidth: 1.2,
-    borderColor: "darkgray",
-    borderRadius: 9,
-    color: "black",
-    paddingHorizontal: 10,
-    fontSize: 18,
-  },
   nextButton: {
     width: "79%",
     height: 60,
@@ -112,4 +87,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default Kullanici;
+export default Kullanici3;

@@ -1,6 +1,7 @@
 import React from 'react';
 import {
   Pressable,
+  TouchableOpacity,
   StyleSheet,
   Text,
   View,
@@ -10,7 +11,7 @@ import MaterialCommunityIcon from 'react-native-vector-icons/MaterialCommunityIc
 const Kampanyalar = () => {
   return (
     <View style={styles.kampanyaView}>
-      <View style={styles.kampanya}>
+      <TouchableOpacity delayPressIn={80} style={styles.kampanya}>
         <MaterialCommunityIcon 
           name='diamond-stone' 
           color={"#00c9d4"} 
@@ -20,8 +21,8 @@ const Kampanyalar = () => {
           <Text style={{color: "#00c9d4", fontWeight: "800", fontSize: 13}}>SANA ÖZEL</Text>
           <Text style={{color: "gray", fontSize: 12}}>5 kampanya var</Text>
         </View>
-      </View>
-      <View style={styles.kampanya}>
+      </TouchableOpacity>
+      <TouchableOpacity delayPressIn={80} style={styles.kampanya}>
       <MaterialCommunityIcon 
           name='ticket-percent' 
           color={"#00c9d4"} 
@@ -31,7 +32,7 @@ const Kampanyalar = () => {
           <Text style={{color: "#00c9d4", fontWeight: "800", fontSize: 13}}>4x4 İNDİRİM</Text>
           <Text style={{color: "gray", fontSize: 12}}>8 kampanya var</Text>
         </View>
-      </View>
+      </TouchableOpacity>
     </View>
   );
 };

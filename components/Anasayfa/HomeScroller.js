@@ -55,7 +55,7 @@ const styles = StyleSheet.create({
   productsTextTitle: {
     color: "#3a3a3a",
     fontSize: 16,
-    fontWeight: "800",
+    fontWeight: "600",
     marginLeft: 6
   },
   productsTextSubtitle: {

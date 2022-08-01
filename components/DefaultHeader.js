@@ -7,7 +7,7 @@ import {
 } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 
-const DefaultHeader = () => {
+const DefaultHeader = (props) => {
   return (
     <View style={{
       height: 55,
@@ -24,7 +24,7 @@ const DefaultHeader = () => {
         fontWeight: "bold",
       }}>hepsiorada</Text>
       <View style={{flexDirection: "row"}}>
-        <Pressable>
+        <TouchableOpacity delayPressIn={80}>
           <View style={{marginRight: 18}}>
             <Text style={{
               color: "white",
@@ -40,8 +40,8 @@ const DefaultHeader = () => {
             }}> 3 </Text>
             <Icon name='notifications-outline' size={25} color={"#3a3a3a"} style={{}}/>
           </View>
-        </Pressable>
-        <Pressable>
+        </TouchableOpacity>
+        <Pressable onPress={props.onAccountPress}>
           <Icon name='person-outline' size={25} color={"#3a3a3a"} style={{marginRight: 15}}/>
         </Pressable>
       </View>
