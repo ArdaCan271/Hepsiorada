@@ -32,8 +32,6 @@ const TabPages = () => {
           iconName = focused ? "home" : "home-outline";
         } else if (route.name === "Sepetim") {
           iconName = focused ? "cart" : "cart-outline";
-        } else if (route.name === "Kullanıcı") {
-          iconName = focused ? "person" : "person-outline"
         } else if (route.name === "Kategoriler") {
           iconName = focused ? "grid" : "grid-outline"
         }
