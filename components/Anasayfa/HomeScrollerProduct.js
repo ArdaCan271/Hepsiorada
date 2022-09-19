@@ -9,8 +9,9 @@ import {
 } from 'react-native';
 
 const HomeScrollerProduct = (props) => {
+
   return (
-    <View style={styles.productItemView}>
+    <Pressable style={styles.productItemView} onPress={() => {props.onPress([props.image, props.price, props.discountPrice, props.title])}}>
       <View style={styles.productImageView}>
         <Image 
         style={styles.productImage} 
@@ -26,7 +27,7 @@ const HomeScrollerProduct = (props) => {
       <TouchableOpacity delayPressIn={80} style={styles.addProductButton}>
         <Text style={{color: "#3a3a3a", fontSize: 12, fontWeight: "500"}}>SEPETE EKLE</Text>
       </TouchableOpacity>
-    </View>
+    </Pressable>
   );
 };
 

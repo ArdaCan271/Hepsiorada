@@ -16,6 +16,7 @@ import Advert from '../components/Anasayfa/Advert';
 import HomeScroller from '../components/Anasayfa/HomeScroller';
 import HomeScrollerProduct from '../components/Anasayfa/HomeScrollerProduct';
 import SuggestionsPlace from '../components/Anasayfa/SuggestionsPlace';
+import DetailedProduct from '../components/DetailedProduct';
 
 const Anasayfa = ({navigation}) => {
 
@@ -29,6 +30,25 @@ const Anasayfa = ({navigation}) => {
         onAccountPress={() => navigation.navigate("Kullanıcı")}/>),
     });
   }, []);
+
+  const [modalOpen, setModalOpen] = useState(false);
+  
+  const [modalInfo, setModalInfo] = useState()
+
+
+  const onProductPress = (data) => {
+    useEffect(() => {
+      setModalInfo(data)
+    }, [data])
+    console.log(modalInfo);
+    setModalOpen(true)
+  };
+
+  const onModalOutsidePress = () => {
+    setModalOpen(false)
+  };
+
+
 
   const advert1 = require("../assets/adverts/advert1.jpg");
   const advert2 = require("../assets/adverts/advert2.jpg");
@@ -58,6 +78,7 @@ const Anasayfa = ({navigation}) => {
     contentContainerStyle={{justifyContent: "flex-start", alignItems: "center"}} 
     style={styles.container}
     showsVerticalScrollIndicator={false}>
+      <DetailedProduct modalVisible={modalOpen} onOutsidePress={onModalOutsidePress}/>
       <LocationPayBar/>
       <SearchBar/>
       <SuggestionsPlace>
@@ -79,22 +100,27 @@ const Anasayfa = ({navigation}) => {
         image={laptop1}
         price="19.500,00"
         discountPrice=""
-        title='Acer Nitro 5 AN515-57 Intel Core I7 11800H 16 GB 512 GB SSD RTX 3050TI 4GB Freedos 15.6" Taşınabilir Bilgisayar NH.QESEY.002'/>
+        title='Acer Nitro 5 AN515-57 Intel Core I7 11800H 16 GB 512 GB SSD RTX 3050TI 4GB Freedos 15.6" Taşınabilir Bilgisayar NH.QESEY.002'
+        onPress={onProductPress}/>
         <HomeScrollerProduct
         image={phone1}
         price="5.650,00"
         discountPrice="7.350,00"
-        title='Samsung Galaxy M23 5G 128 GB (Samsung Türkiye Garantili)'/>
+        title='Samsung Galaxy M23 5G 128 GB (Samsung Türkiye Garantili)'
+        onPress={onProductPress}/>
         <HomeScrollerProduct
         image={headphones1}
         price="721,01"
-        title="JBL Tune 510BT Multi Connect Mikrofonlu Kulaküstü Kablosuz Kulaklık Mavi"/>
+        title="JBL Tune 510BT Multi Connect Mikrofonlu Kulaküstü Kablosuz Kulaklık Mavi"
+        onPress={onProductPress}/>
         <HomeScrollerProduct
+        onPress={onProductPress}
         image={airfryer1}
         price="1.499,00"
         discountPrice=""
         title='Kumtel Fastfryer HAF - 01 (Yağsız Fritöz Airfryer)'/>
         <HomeScrollerProduct
+        onPress={onProductPress}
         image={table1}
         price="163,90"
         discountPrice="218,60"
@@ -126,19 +152,23 @@ const Anasayfa = ({navigation}) => {
       title="Tatile çıkacaklara öneriler"
       subtitle="Sezonun favori ürünlerini senin için listeledik">
         <HomeScrollerProduct
+        onPress={onProductPress}
         image={krem2}
         price="124,90"
         discountPrice="140,00"
         title="Nivea Sun Koruma&Bronzluk Bronzluk Arttırıcı & Koruyucu Güneş Yağı Gkf 20 200 Ml"/>
         <HomeScrollerProduct
+        onPress={onProductPress}
         image={elbise1}
         price="49,90"
         title="Mite Love Pareo Plaj Elbisesi Ponponlu"/>
         <HomeScrollerProduct
+        onPress={onProductPress}
         image={glasses1}
         price="49,90"
         title="Modalucci Yeni Sezon Unisex Güneş Gözlüğü"/>
         <HomeScrollerProduct
+        onPress={onProductPress}
         image={kolluk1}
         price="289,00"
         title="Bamm Bamm Başlangıç Seviye Yüzme Kolluk Çocuk Kolluk Yüzme Yardımcısı Kolluk Şişme Deniz Havuz Kolluk Simit (S) 1-5 Yaş"/>
@@ -152,6 +182,7 @@ const Anasayfa = ({navigation}) => {
         discountPrice="121,50"
         title="Daylong Kids Spf 50 Faktör 150 Ml Çocuk Güneş Kremi"/> */}
         <HomeScrollerProduct
+        onPress={onProductPress}
         image={shoes1}
         price="109,00"
         title="Daxtors D079 Günlük Kadın Terlik"/>
