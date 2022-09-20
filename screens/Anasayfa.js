@@ -35,12 +35,15 @@ const Anasayfa = ({navigation}) => {
   
   const [modalInfo, setModalInfo] = useState()
 
+  const changeModalInfo = () => {
+    
+  };
 
   const onProductPress = (data) => {
-    useEffect(() => {
-      setModalInfo(data)
-    }, [data])
-    console.log(modalInfo);
+    //useEffect(() => {
+    //  setModalInfo(data)
+    //}, [data])
+    //console.log(modalInfo);
     setModalOpen(true)
   };
 
