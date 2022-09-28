@@ -39,12 +39,15 @@ const Anasayfa = ({navigation}) => {
     
   };
 
+  useEffect(() => {
+    if (modalInfo != undefined){
+      setModalOpen(true)
+    }
+    console.log(modalInfo)
+  }, [modalInfo])
+
   const onProductPress = (data) => {
-    //useEffect(() => {
-    //  setModalInfo(data)
-    //}, [data])
-    //console.log(modalInfo);
-    setModalOpen(true)
+    setModalInfo(data)
   };
 
   const onModalOutsidePress = () => {
@@ -81,7 +84,7 @@ const Anasayfa = ({navigation}) => {
     contentContainerStyle={{justifyContent: "flex-start", alignItems: "center"}} 
     style={styles.container}
     showsVerticalScrollIndicator={false}>
-      <DetailedProduct modalVisible={modalOpen} onOutsidePress={onModalOutsidePress}/>
+      <DetailedProduct modalVisible={modalOpen} onOutsidePress={onModalOutsidePress} modalInfo={modalInfo}/>
       <LocationPayBar/>
       <SearchBar/>
       <SuggestionsPlace>
