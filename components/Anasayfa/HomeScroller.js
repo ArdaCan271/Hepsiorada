@@ -6,6 +6,7 @@ import {
   View,
   Pressable,
   TouchableOpacity,
+  FlatList,
 } from 'react-native';
 import MaterialCommunityIcon from 'react-native-vector-icons/MaterialCommunityIcons';
 
@@ -25,14 +26,18 @@ const HomeScroller = (props) => {
           <MaterialCommunityIcon name='chevron-right' color={"#00c9d4"} size={25}/>
         </TouchableOpacity>}
       </View>
-      <ScrollView 
+      <FlatList
+      horizontal={true}
+      data={props.productData}
+      renderItem={props.renderItem}/>
+      {/* <ScrollView 
       
       horizontal 
       style={styles.productsItemScroller}
       contentContainerStyle={{justifyContent: "flex-start", alignItems: "center"}}
       showsHorizontalScrollIndicator={false}>
         {props.children}
-      </ScrollView>
+      </ScrollView> */}
     </View>
   );
 };

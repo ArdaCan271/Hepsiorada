@@ -1,5 +1,6 @@
 import React from 'react';
 import {
+  FlatList,
   ScrollView,
   StyleSheet,
 } from 'react-native';
@@ -17,6 +18,92 @@ import HomeScroller from '../components/Anasayfa/HomeScroller';
 import HomeScrollerProduct from '../components/Anasayfa/HomeScrollerProduct';
 import SuggestionsPlace from '../components/Anasayfa/SuggestionsPlace';
 import DetailedProduct from '../components/DetailedProduct';
+
+const advert1 = require("../assets/adverts/advert1.jpg");
+const advert2 = require("../assets/adverts/advert2.jpg");
+const advert3 = require("../assets/adverts/advert3.jpg");
+const advert4 = require("../assets/adverts/advert4.jpg");
+
+
+const laptop1 = require("../assets/productImages/laptop1.png");
+const phone1 = require("../assets/productImages/phone1.png");
+const phone2 = require("../assets/productImages/phone2.jpg");
+const phone3 = require("../assets/productImages/phone3.jpg");
+const phone4 = require("../assets/productImages/phone4.jpg");
+const airfryer1 = require("../assets/productImages/airfryer1.jpg");
+const lamp1 = require("../assets/productImages/lamp1.jpg");
+const headphones1 = require("../assets/productImages/headphones1.jpg");
+const table1 = require("../assets/productImages/table1.jpg");
+const chair2 = require("../assets/productImages/chair2.jpg");
+const krem1 = require("../assets/productImages/krem1.jpg");
+const krem2 = require("../assets/productImages/krem2.jpg");
+const shoes1 = require("../assets/productImages/shoes1.jpg");
+const kolluk1 = require("../assets/productImages/kolluk1.jpg");
+const elbise1 = require("../assets/productImages/elbise1.jpg");
+const glasses1 = require("../assets/productImages/glasses1.jpg");
+
+const productData = [
+  {
+    image: laptop1,
+    price: "",
+    discountPrice: "",
+    title: "",
+  },
+  {
+    image: phone1,
+    price: "",
+    discountPrice: "",
+    title: "",
+  },
+  {
+    image: headphones1,
+    price: "",
+    discountPrice: "",
+    title: "",
+  },
+  {
+    image: airfryer1,
+    price: "",
+    discountPrice: "",
+    title: "",
+  },
+  {
+    image: table1,
+    price: "",
+    discountPrice: "",
+    title: "",
+  },
+  {
+    image: chair2,
+    price: "",
+    discountPrice: "",
+    title: "",
+  },
+  {
+    image: lamp1,
+    price: "",
+    discountPrice: "",
+    title: "",
+  },
+  {
+    image: phone2,
+    price: "",
+    discountPrice: "",
+    title: "",
+  },
+  {
+    image: phone3,
+    price: "",
+    discountPrice: "",
+    title: "",
+  },
+  {
+    image: phone4,
+    price: "",
+    discountPrice: "",
+    title: "",
+  },
+]
 
 const Anasayfa = ({navigation}) => {
 
@@ -54,30 +141,14 @@ const Anasayfa = ({navigation}) => {
     setModalOpen(false)
   };
 
-
-
-  const advert1 = require("../assets/adverts/advert1.jpg");
-  const advert2 = require("../assets/adverts/advert2.jpg");
-  const advert3 = require("../assets/adverts/advert3.jpg");
-  const advert4 = require("../assets/adverts/advert4.jpg");
-
-
-  const laptop1 = require("../assets/productImages/laptop1.png");
-  const phone1 = require("../assets/productImages/phone1.png");
-  const phone2 = require("../assets/productImages/phone2.jpg");
-  const phone3 = require("../assets/productImages/phone3.jpg");
-  const phone4 = require("../assets/productImages/phone4.jpg");
-  const airfryer1 = require("../assets/productImages/airfryer1.jpg");
-  const lamp1 = require("../assets/productImages/lamp1.jpg");
-  const headphones1 = require("../assets/productImages/headphones1.jpg");
-  const table1 = require("../assets/productImages/table1.jpg");
-  const chair2 = require("../assets/productImages/chair2.jpg");
-  const krem1 = require("../assets/productImages/krem1.jpg");
-  const krem2 = require("../assets/productImages/krem2.jpg");
-  const shoes1 = require("../assets/productImages/shoes1.jpg");
-  const kolluk1 = require("../assets/productImages/kolluk1.jpg");
-  const elbise1 = require("../assets/productImages/elbise1.jpg");
-  const glasses1 = require("../assets/productImages/glasses1.jpg");
+  const renderItem = ({item}) => (
+    <HomeScrollerProduct 
+    image={item.image}
+    price={item.price}
+    discountPrice={item.discountPrice}
+    title={item.title}
+    onPress={onProductPress}/>
+  )
 
   return (
     <ScrollView 
@@ -101,8 +172,10 @@ const Anasayfa = ({navigation}) => {
       <Advert image={advert1}/>
       <HomeScroller 
       title="Süper Fiyat, Süper Teklif"
-      showAllButton={true}>
-        <HomeScrollerProduct
+      showAllButton={true}
+      productData={productData}
+      renderItem={renderItem}>
+        {/* <HomeScrollerProduct
         image={laptop1}
         price="19.500,00"
         discountPrice=""
@@ -130,7 +203,7 @@ const Anasayfa = ({navigation}) => {
         image={table1}
         price="163,90"
         discountPrice="218,60"
-        title='Box&Box Küçük Boy Katlanabilir Kumaş Kamp ve Piknik Masası, Siyah, 57 x 43 x 38 cm'/>
+        title='Box&Box Küçük Boy Katlanabilir Kumaş Kamp ve Piknik Masası, Siyah, 57 x 43 x 38 cm'/> */}
         {/* <HomeScrollerProduct
         image={phone2}
         price="9.324,01"
