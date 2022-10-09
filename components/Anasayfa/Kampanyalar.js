@@ -11,7 +11,7 @@ import MaterialCommunityIcon from 'react-native-vector-icons/MaterialCommunityIc
 const Kampanyalar = () => {
   return (
     <View style={styles.kampanyaView}>
-      <TouchableOpacity delayPressIn={80} style={styles.kampanya}>
+      <TouchableOpacity style={styles.kampanya}>
         <MaterialCommunityIcon 
           name='diamond-stone' 
           color={"#00c9d4"} 
