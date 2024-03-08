@@ -4,4 +4,4 @@ Frontend alanında kendimi geliştirmek ve React Native'i daha iyi kavramak içi
 
 Hepsiburada uygulamasının dizaynını React Native ile tekrardan oluşturdum.
 
-[Screenshot 1](/screenshots/Screenshot_1.png)
+![Screenshot 1](/screenshots/Screenshot_1.png)
