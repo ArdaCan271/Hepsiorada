@@ -1,8 +1,8 @@
 # Hepsiorada
 
-Frontend alanında kendimi geliştirmek ve React Native'i daha iyi kavramak için yaptığım bir proje.
+A small project I created in order to get a better understanding of React Native styling.
 
-Hepsiburada uygulamasının dizaynını React Native ile tekrardan oluşturdum.
+It is a visual replica of a popular e-commerce app "hepsiburada".
 
 <p float="left">
 <img src='https://github.com/ArdaCan271/Hepsiorada/blob/master/screenshots/Screenshot_1.png' width='250'>
